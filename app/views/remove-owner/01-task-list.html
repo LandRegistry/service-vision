@@ -1,13 +1,102 @@
 {% extends "layouts/main.html" %}
 
-{% set serviceName = "Remove joint owner" %}  
+{% set serviceName = "" %}  
 
 {% block pageTitle %}
   Start page template – {{ serviceName }} – HMLR Prototype Kit
 {% endblock %}
 
-
 {% block content %}
+
+<style>
+.govuk-task-list {
+    font-family: GDS Transport, arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    list-style-type: none;
+}
+@media print {
+    .govuk-task-list {
+        font-family: sans-serif;
+    }
+}
+@media (min-width: 40.0625em) {
+    .govuk-task-list {
+        font-size: 1.1875rem;
+        line-height: 1.3157894737;
+    }
+}
+@media print {
+    .govuk-task-list {
+        font-size: 14pt;
+        line-height: 1.15;
+    }
+}
+@media (min-width: 40.0625em) {
+    .govuk-task-list {
+        margin-bottom: 30px;
+    }
+}
+.govuk-task-list__item {
+    display: table;
+    position: relative;
+    width: 100%;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #b1b4b6;
+}
+.govuk-task-list__item:first-child {
+    border-top: 1px solid #b1b4b6;
+}
+.govuk-task-list__item--with-link:hover {
+    background: #f3f2f1;
+}
+.govuk-task-list__name-and-hint {
+    display: table-cell;
+    vertical-align: top;
+    color: #0b0c0c;
+}
+@media print {
+    .govuk-task-list__name-and-hint {
+        color: #000;
+    }
+}
+.govuk-task-list__status {
+    display: table-cell;
+    padding-left: 10px;
+    text-align: right;
+    vertical-align: top;
+    color: #0b0c0c;
+}
+@media print {
+    .govuk-task-list__status {
+        color: #000;
+    }
+}
+.govuk-task-list__status--cannot-start-yet {
+    color: #505a5f;
+}
+.govuk-task-list__link:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.govuk-task-list__hint {
+    margin-top: 5px;
+    color: #505a5f;
+}
+</style>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -18,10 +107,8 @@
 
 			<ul class="govuk-task-list">
 			  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-			    <div class="govuk-task-list__name-and-hint">
-			      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-1-status">
+			    <div class="govuk-task-list__name-and-hint">			      
 			        Registering the death
-			      </a>
 			    </div>
 			    <div class="govuk-task-list__status" id="company-details-1-status">
 			      Completed
@@ -29,9 +116,7 @@
 			  </li>
 			  <li class="govuk-task-list__item govuk-task-list__item--with-link">
 			    <div class="govuk-task-list__name-and-hint">
-			      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-2-hint company-details-2-status">
 			        Tax and National Insurance
-			      </a>
 			    </div>
 			    <div class="govuk-task-list__status" id="company-details-2-status">
 			        Completed
@@ -39,9 +124,7 @@
 			  </li>
 			  <li class="govuk-task-list__item govuk-task-list__item--with-link">
 			    <div class="govuk-task-list__name-and-hint">
-			      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-3-status">
 			        Benefits and Pensions
-			      </a>
 			    </div>
 			    <div class="govuk-task-list__status" id="company-details-3-status">
 			        Completed
@@ -49,9 +132,7 @@
 			  </li>
 			  <li class="govuk-task-list__item govuk-task-list__item--with-link">
 			    <div class="govuk-task-list__name-and-hint">
-			      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-4-status">
 			        Vehicles and Driving licences
-			      </a>
 			    </div>
 			    <div class="govuk-task-list__status" id="company-details-4-status">
 			        Completed
@@ -59,9 +140,7 @@
 			  </li>
 			  <li class="govuk-task-list__item govuk-task-list__item--with-link">
 			    <div class="govuk-task-list__name-and-hint">
-			      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-5-status">
 			        Passports
-			      </a>
 			    </div>
 			    <div class="govuk-task-list__status" id="company-details-5-status">
 			        Completed
@@ -70,7 +149,7 @@
 			  <li class="govuk-task-list__item govuk-task-list__item--with-link">
 			    <div class="govuk-task-list__name-and-hint">
 			      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-6-status">
-			        Update property records
+			        Property records
 			      </a>
 			    </div>
 			    <div class="govuk-task-list__status" id="company-details-6-status">
@@ -80,35 +159,14 @@
 			    </div>
 			  </li>
 			</ul>
+
+			<a href="" class="govuk-button" >
+  			Continue
+			</a>
       
     </div>
     
     <div class="govuk-grid-column-one-third">
-
-      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          Subsection
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="#">
-                Related link
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Related link
-              </a>
-            </li>
-            <li>
-              <a href="#" class="govuk-!-font-weight-bold">
-                More <span class="govuk-visually-hidden">in Subsection</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
 
     </div>
   </div>
